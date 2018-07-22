@@ -19,6 +19,21 @@ p, a{
   background-color: #FFFFFF;
 }
 
+/* RECIPE CARDS */
+
+.card-row{
+  padding-bottom: 30px;
+}
+
+.recipe-card:hover{
+  background-color: #e7e7e7;
+}
+
+.card-foreground{
+  height: 150px;
+}
+
+
 
 /* NAV BAR */
 .nav-link{

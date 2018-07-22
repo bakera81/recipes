@@ -9,7 +9,7 @@
   <!-- Project Cards -->
   <div class="jumbotron jumbo-white header" id="projects">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" align="center">
         <h1>Recipes</h1>
       </div>
       <hr class="featurette-divider"></hr>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="container-fluid cards">
-    <div class="row proj-row">
+    <div class="row card-row">
       {% import "partials/recipe_card.html.j2" as card -%}
 
       {{ card.create(title="Arrabbiata", slug="arrabbiata") }}
@@ -33,7 +33,7 @@
   </div> <!-- container-fluid -->
 
   <div class="container-fluid cards">
-    <div class="row proj-row">
+    <div class="row card-row">
 
       {{ card.create(title="Poor Anthony's Lonely Thanksgiving", slug="lonely-thanksgiving") }}
 

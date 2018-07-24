@@ -21,6 +21,10 @@ p, a{
 
 /* RECIPE CARDS */
 
+a.card-href, a.card-href:hover{
+  color: #333;
+}
+
 .card-row{
   padding-bottom: 30px;
 }

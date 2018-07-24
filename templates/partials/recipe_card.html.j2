@@ -1,0 +1,10 @@
+{% macro create(title, slug) -%}
+<div class="col-sm-3 recipe-card">
+    <a class="card-href" href="{{ url_for('render_recipe', recipe_slug=slug) }}">
+      <div class="card-foreground">
+        <h3><i>{{ title | upper }}</i></h3>
+      </div>
+    </a>
+</div>
+
+{%- endmacro %}

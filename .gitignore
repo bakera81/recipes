@@ -1,0 +1,4 @@
+*.pyc
+recipes_env/
+tmp/
+public/

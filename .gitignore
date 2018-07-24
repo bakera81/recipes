@@ -2,3 +2,4 @@
 recipes_env/
 tmp/
 public/
+__pycache__/

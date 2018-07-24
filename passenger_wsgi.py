@@ -6,4 +6,3 @@ from app import app as application
 
 # Helpful links to deploy:
 # https://help.dreamhost.com/hc/en-us/articles/215769548-Passenger-and-Python-WSGI
-# Note that I copied the all files from the bakera81/recipes repo to recipes.anthonywbaker.com

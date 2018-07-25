@@ -10,7 +10,7 @@ def recipes():
         nav_items=True
     )
 
-@app.route('/salads')
+@app.route('/salads/')
 def salads():
     return render_template(
         'recipes/salads.html.j2',
@@ -18,7 +18,7 @@ def salads():
         nav_items=True
     )
 
-@app.route('/salads/<recipe_slug>')
+@app.route('/salads/<recipe_slug>/')
 def render_salad(recipe_slug):
     return render_template(
         'recipes/salads/{0}.html.j2'.format(recipe_slug),
@@ -26,7 +26,7 @@ def render_salad(recipe_slug):
         nav_items=True
     )
 
-@app.route('/<recipe_slug>')
+@app.route('/<recipe_slug>/')
 def render_recipe(recipe_slug):
     return render_template(
         'recipes/{0}.html.j2'.format(recipe_slug),

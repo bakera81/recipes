@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.html.j2" %}
+</head>
+<body>
+  {% include "partials/nav.html.j2" %}
+
+  <div class="jumbotron jumbo-white">
+    <div class="container-fluid">
+      <span class="header"><h1><i>{{ title }}</i></h1></span>
+      <div class="space"></div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="col-sm-6">
+      <div class="header"><h3>INGREDIENTS</h3></div>
+      <ul>
+        {% for ingredient in ingredients %}
+        <li><p>{{ ingedient }}</p></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <div class="header"><h3>INSTRUCTIONS</h3></div>
+      <ol>
+      {% for instruction in instructions %}
+        <li><p>{{ instruction.instruction }}</p></li>
+        {% if instruction.protip %}
+        <p>Pro Tip&trade;: {{ instruction.protip }}</p>
+        {% endif %}
+      {% endfor %}
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

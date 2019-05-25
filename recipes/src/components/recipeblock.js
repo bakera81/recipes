@@ -1,8 +1,14 @@
 import React from "react"
-import recipeBlockStyles from "./recipeblock.module.css"
+
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+
+const RecipeBlock = styled.div`
+  background-color: pink;
+`
 
 export default props => (
-  <div className={recipeBlockStyles.recipeblock}>
+  <RecipeBlock>
     <h3>{props.title}</h3>
-  </div>
+  </RecipeBlock>
 )

@@ -3,3 +3,4 @@ recipes_env/
 tmp/
 public/
 __pycache__/
+.DS_Store

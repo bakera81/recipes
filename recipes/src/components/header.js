@@ -1,3 +1,10 @@
 import React from "react"
 
-export default props => <h1>{props.headerText}</h1>
+// import { Break } from "gatsby"
+import 'bulma/css/bulma.css'
+
+export default props => (
+  <section className="section">
+    <h1 className="is-size-1">{props.headerText}</h1>
+  </section>
+)

@@ -12,8 +12,11 @@ export default () => (
     <Navbar />
     <Header class="name" headerText="Recipes"/>
     <Container>
-      <RecipeBlock title="Salty Pasta" />
+      <RecipeBlock title="Salty Pasta" slug="https://www.google.com" />
       <RecipeBlock title="Spicy Pasta" />
+      <RecipeBlock title="Simple Pasta" />
+      <RecipeBlock title="Savory Pasta" />
+      <RecipeBlock title="Scintillating Pasta" />
     </Container>
     <div className="box">
       <img src="https://source.unsplash.com/random/128x128" />

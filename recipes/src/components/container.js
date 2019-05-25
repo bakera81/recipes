@@ -7,5 +7,5 @@ const Container = styled.div`
 `
 
 export default ({ children }) => (
-  <Container className="columns">{children}</Container>
+  <Container className="columns is-multiline">{children}</Container>
 )

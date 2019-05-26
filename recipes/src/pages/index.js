@@ -2,14 +2,13 @@ import React from "react"
 
 import 'bulma/css/bulma.css'
 
-import Navbar from  "../components/navbar"
+import Layout from  "../components/layout"
 import PageTitle from "../components/pagetitle"
 import Container from "../components/container"
 import RecipeBlock from "../components/recipeblock"
 
 export default () => (
-  <div>
-    <Navbar />
+  <Layout>
     <PageTitle title="Recipes"/>
     <Container>
       <RecipeBlock title="Salty Pasta" slug="https://www.google.com" />
@@ -21,5 +20,5 @@ export default () => (
     <div className="box">
       <img src="https://source.unsplash.com/random/128x128" />
     </div>
-  </div>
+  </Layout>
 )

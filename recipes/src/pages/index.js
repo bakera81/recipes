@@ -15,9 +15,6 @@ export default ({ data }) => (
         <RecipeBlock title={node.title} slug={node.fields.slug} />
       ))}
     </Container>
-    <div className="box">
-      <img src="https://source.unsplash.com/random/128x128" />
-    </div>
   </Layout>
 )
 

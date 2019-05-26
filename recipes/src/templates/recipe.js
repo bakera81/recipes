@@ -2,7 +2,7 @@ import React from "react"
 
 import 'bulma/css/bulma.css'
 
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from  "../components/layout"
 import PageTitle from "../components/pagetitle"
 

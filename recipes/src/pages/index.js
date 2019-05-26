@@ -7,18 +7,31 @@ import PageTitle from "../components/pagetitle"
 import Container from "../components/container"
 import RecipeBlock from "../components/recipeblock"
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <PageTitle title="Recipes"/>
     <Container>
-      <RecipeBlock title="Salty Pasta" slug="https://www.google.com" />
-      <RecipeBlock title="Spicy Pasta" />
-      <RecipeBlock title="Simple Pasta" />
-      <RecipeBlock title="Savory Pasta" />
-      <RecipeBlock title="Scintillating Pasta" />
+      {data.allDataYaml.edges.map(({ node }) => (
+        <RecipeBlock title={node.title} slug={node.fields.slug} />
+      ))}
     </Container>
     <div className="box">
       <img src="https://source.unsplash.com/random/128x128" />
     </div>
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    allDataYaml {
+      edges {
+        node {
+          title
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`

@@ -5,6 +5,9 @@
  */
 
  module.exports = {
+   siteMetadata: {
+     title: `ANTHONY W. BAKER`,
+   },
    plugins: [
      `gatsby-plugin-emotion`,
      {

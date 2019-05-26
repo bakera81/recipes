@@ -17,7 +17,7 @@ const recipeblock = css`
   }
 `
 
-const block = css`
+const Block = styled.div`
   height: 150px;
   padding: 5px 15px 0 15px;
   &:hover{
@@ -32,9 +32,9 @@ const blocktitle = css`
 export default props => (
   <div className="column is-3">
     <Link to={props.slug} css={recipeblock}>
-      <div css={block}>
+      <Block>
         <h3 className="is-size-3" css={blocktitle}>{props.title.toUpperCase()}</h3>
-      </div>
+      </Block>
     </Link>
   </div>
 )

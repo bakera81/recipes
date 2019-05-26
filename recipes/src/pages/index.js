@@ -3,14 +3,14 @@ import React from "react"
 import 'bulma/css/bulma.css'
 
 import Navbar from  "../components/navbar"
-import Header from "../components/header"
+import PageTitle from "../components/pagetitle"
 import Container from "../components/container"
 import RecipeBlock from "../components/recipeblock"
 
 export default () => (
   <div>
     <Navbar />
-    <Header class="name" headerText="Recipes"/>
+    <PageTitle title="Recipes"/>
     <Container>
       <RecipeBlock title="Salty Pasta" slug="https://www.google.com" />
       <RecipeBlock title="Spicy Pasta" />

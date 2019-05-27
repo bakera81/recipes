@@ -24,6 +24,14 @@ exports.createPages = ({ graphql, actions }) => {
         edges {
           node {
             title
+            ingredients {
+              text
+              protip
+            }
+            instructions {
+              text
+              protip
+            }
             fields {
               slug
             }
@@ -42,6 +50,8 @@ exports.createPages = ({ graphql, actions }) => {
           // Data passed to context is available
           // in page queries as GraphQL variables.
           title: node.title,
+          ingredients: node.ingredients,
+          instructions: node.instructions,
           slug: node.fields.slug,
         },
       })

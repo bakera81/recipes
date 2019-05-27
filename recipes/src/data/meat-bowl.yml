@@ -1,1 +1,6 @@
 title: Big Anthony's anytime big breakfast bowl of meat
+ingredients:
+  - text: Another ingredient
+instructions:
+  - text: One instruction.
+    protip: data quality issues?

@@ -1,9 +1,14 @@
 import React from "react"
 
 import 'bulma/css/bulma.css'
+import styled from "@emotion/styled"
+
+const RecipeListContainer = styled.div`
+  padding-bottom: 30px;
+`
 
 export default props => (
-  <div className="content">
+  <RecipeListContainer className="content">
     <ol>
       {props.list.map(item => (
         <li>
@@ -17,5 +22,5 @@ export default props => (
         </li>
       ))}
     </ol>
-  </div>
+  </RecipeListContainer>
 )

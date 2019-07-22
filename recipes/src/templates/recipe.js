@@ -15,7 +15,7 @@ const H3 = styled.h3`
 
 export default ({ data }) => (
   <Layout>
-    <PageTitle title={data.dataYaml.title} />
+    <PageTitle title={data.dataYaml.title.toUpperCase()} />
     <div class="columns">
       <div class="column">
         <H3 className="title is-3">Ingredients</H3>

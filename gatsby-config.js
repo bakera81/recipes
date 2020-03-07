@@ -6,7 +6,7 @@
 
  module.exports = {
    siteMetadata: {
-     title: `ANTHONY W. BAKER`,
+     title: `Anthony W. Baker`,
    },
    plugins: [
      `gatsby-plugin-emotion`,
@@ -18,6 +18,13 @@
         path: `${__dirname}/src/data`,
       },
     },
+    {
+     resolve: `gatsby-source-filesystem`,
+     options: {
+       name: `fonts`,
+       path: `${__dirname}/src/fonts`,
+     },
+   },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

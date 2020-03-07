@@ -7,7 +7,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import NavItem from "./navitem"
 
 const logo = css`
-  font-style: italic;
+  /* font-style: italic; */
+  font-family: "Chomsky";
   font-weight: 300;
   color: #000;
   &:hover{
@@ -31,13 +32,16 @@ export default () => {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" css={logo} className="navbar-item">{data.site.siteMetadata.title}</Link>
-        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        {/*
+          <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+           <span aria-hidden="true"></span>
+         </a>
+         */}
 
+      </div>
+      {/*
       <div className="navbar-menu">
         <div className="navbar-start">
           <NavItem slug="/projects" text="Projects"></NavItem>
@@ -46,6 +50,7 @@ export default () => {
           <NavItem slug="/contact" text="Contact"></NavItem>
         </div>
       </div>
+      */}
     </nav>
 
     /*

@@ -1,35 +1,24 @@
 import React from "react"
 
 import 'bulma/css/bulma.css'
+import styled from "@emotion/styled"
 
 import { graphql } from 'gatsby'
-import Layout from  "../components/layout"
-import PageTitle from "../components/pagetitle"
-import Container from "../components/container"
-import RecipeBlock from "../components/recipeblock"
+import Layout from "../components/layout"
 
-export default ({ data }) => (
+const CategoryTitle = styled.h1`
+  font-family: "Microsoft Sans Serif";
+  color: red;
+`
+
+export default () => (
   <Layout>
-    <PageTitle title="Recipes"/>
-    <Container>
-      {data.allDataYaml.edges.map(({ node }) => (
-        <RecipeBlock title={node.title} slug={node.fields.slug} />
-      ))}
-    </Container>
+    <ul>
+      <li><CategoryTitle>About</CategoryTitle></li>
+      <li>Projects</li>
+      <li>Data</li>
+      <li>Recipes</li>
+      <li>Contact</li>
+    </ul>
   </Layout>
 )
-
-export const query = graphql`
-  query {
-    allDataYaml {
-      edges {
-        node {
-          title
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  }
-`

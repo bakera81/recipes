@@ -11,6 +11,8 @@
    plugins: [
      `gatsby-plugin-emotion`,
      `gatsby-transformer-yaml`,
+     `gatsby-plugin-sharp`,
+     `gatsby-transformer-sharp`,
      {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,11 +27,12 @@
        path: `${__dirname}/src/fonts`,
      },
    },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+   {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images`,
     },
+  },
   ],
  }

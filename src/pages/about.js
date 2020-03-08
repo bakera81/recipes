@@ -1,19 +1,10 @@
 import React from "react"
 
 import 'bulma/css/bulma.css'
-import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
 import PageTitle from  "../components/pagetitle"
-
-
-const P = styled.p`
-  font-family: "Microsoft Sans Serif";
-  font-smooth: never;
-  -webkit-font-smoothing : none;
-  font-weight: normal;
-  text-align: right;
-`
+import P from "../components/paragraph"
 
 export default () => (
   <Layout>

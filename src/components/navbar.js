@@ -8,7 +8,10 @@ import NavItem from "./navitem"
 
 const logo = css`
   /* font-style: italic; */
-  font-family: "Chomsky";
+  /* font-family: "Chomsky"; */
+  font-family: "Microsoft Sans Serif";
+  font-smooth: never;
+  -webkit-font-smoothing : none;
   font-weight: 300;
   color: #000;
   &:hover{

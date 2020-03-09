@@ -16,7 +16,7 @@
      {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `src`,
+        name: `data`,
         path: `${__dirname}/src/data`,
       },
     },

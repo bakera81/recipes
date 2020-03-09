@@ -29,21 +29,21 @@ export default ({ data }) => (
   </Layout>
 )
 
-export const query = graphql`
-  query($slug: String!) {
-     dataYaml(fields: {slug: {eq: $slug}}) {
-       title
-       ingredients {
-         text
-         protip
-       }
-       instructions {
-         text
-         protip
-       }
-       fields {
-         slug
-       }
-     }
-  }
-`
+// export const query = graphql`
+//   query($slug: String!) {
+//      dataYaml(fields: {slug: {eq: $slug}}) {
+//        title
+//        ingredients {
+//          text
+//          protip
+//        }
+//        instructions {
+//          text
+//          protip
+//        }
+//        fields {
+//          slug
+//        }
+//      }
+//   }
+// `

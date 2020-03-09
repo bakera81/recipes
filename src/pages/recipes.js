@@ -21,13 +21,11 @@ export default ({ data }) => (
 
 export const query = graphql`
   query {
-    allDataYaml {
+    allRecipesYaml {
       edges {
         node {
           title
-          fields {
-            slug
-          }
+          slug
         }
       }
     }

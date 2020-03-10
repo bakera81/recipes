@@ -12,8 +12,8 @@ export default ({ data }) => (
   <Layout>
     <PageTitle title="Recipes"/>
     <Container>
-      {data.allDataYaml.edges.map(({ node }) => (
-        <RecipeBlock title={node.title} slug={node.fields.slug} />
+      {data.allRecipesYaml.edges.map(({ node }) => (
+        <RecipeBlock title={node.title} slug={node.slug} />
       ))}
     </Container>
   </Layout>

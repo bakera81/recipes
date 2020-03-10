@@ -1,9 +1,10 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+// This isn't working anymore
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
-  if (node.internal.type === `DataYaml`) {
+  if (node.internal.type === `RecipesYaml`) {
     // Generate slugs from the filename and add them to the node
     const slug = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
@@ -20,10 +21,11 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allDataYaml {
+      allRecipesYaml {
         edges {
           node {
             title
+            slug
             ingredients {
               text
               protip
@@ -32,9 +34,6 @@ exports.createPages = ({ graphql, actions }) => {
               text
               protip
             }
-            fields {
-              slug
-            }
           }
         }
       }
@@ -42,9 +41,9 @@ exports.createPages = ({ graphql, actions }) => {
   `
 ).then(result => {
     console.log(JSON.stringify(result, null, 4))
-    result.data.allDataYaml.edges.forEach(({ node }) => {
+    result.data.allRecipesYaml.edges.forEach(({ node }) => {
       createPage({
-        path: node.fields.slug,
+        path: node.slug,
         component: path.resolve(`./src/templates/recipe.js`),
         context: {
           // Data passed to context is available
@@ -52,7 +51,7 @@ exports.createPages = ({ graphql, actions }) => {
           title: node.title,
           ingredients: node.ingredients,
           instructions: node.instructions,
-          slug: node.fields.slug,
+          slug: node.slug,
         },
       })
     })

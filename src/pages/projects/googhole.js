@@ -9,6 +9,11 @@ import Project from "../../components/project"
 
 import projectImage from "../../images/projects/Gh.png"
 
+export const frontmatter = {
+  title: `Googhole`,
+  description: `The Existential Search Engine`
+}
+
 export default () => (
   <Layout>
     <Project imgRight title="The Existential Search Engine" imgSrc={projectImage}>

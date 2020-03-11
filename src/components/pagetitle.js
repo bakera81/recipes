@@ -39,7 +39,7 @@ export default props => {
           <div className="column has-text-right">
             <Img fixed={data.file.childImageSharp.fixed} />
           </div>
-          <div classname="column">
+          <div className="column">
             <PageTitle className="is-size-1">{props.children}</PageTitle>
           </div>
         </div>

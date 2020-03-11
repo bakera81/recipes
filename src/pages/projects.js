@@ -8,6 +8,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PageTitle from "../components/pagetitle"
 
+
 export default ({ data }) => (
   <Layout>
     <PageTitle>Projects</PageTitle>

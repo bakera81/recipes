@@ -19,10 +19,26 @@ const PTContainer = styled.div`
 `
 
 export default props => {
-  const data = useStaticQuery(
-    graphql`
+   const data = useStaticQuery(
+     graphql`
+       query {
+         allFile(filter: {relativePath: {regex: "/renaissance/"}}) {
+           edges {
+             node {
+               relativePath
+               childImageSharp {
+                 fixed(height: 48) {
+                   ...GatsbyImageSharpFixed
+                 }
+               }
+             }
+           }
+         }
+       }
+     `
+    /* graphql`
       query {
-        file(relativePath: {eq: "400px-Tiziano_-_Amor_Sacro_y_Amor_Profano_(Galería_Borghese,_Roma,_1514).jpg"}) {
+        file(relativePath: {eq: "renaissance/400px-Tiziano_-_Amor_Sacro_y_Amor_Profano_(Galería_Borghese,_Roma,_1514).jpg"}) {
           childImageSharp {
             fixed(height: 48) {
               ...GatsbyImageSharpFixed
@@ -31,15 +47,20 @@ export default props => {
         }
       }
     `
+    */
   )
+
+  const randomImg =  data.allFile.edges[Math.floor(Math.random() * data.allFile.edges.length)]
+
   return (
     <section className="section">
       <div className="container">
-        <div className="columns">
-          <div className="column has-text-right">
-            <Img fixed={data.file.childImageSharp.fixed} />
+        <div className="level">
+        {/*TODO: Get Dan's help*/}
+          <div className="level-right has-text-right" css={{marginLeft: `auto;`, marginRight: `15px;`}}>
+            <Img fixed={randomImg.node.childImageSharp.fixed} />
           </div>
-          <div className="column">
+          <div className="level-right">
             <PageTitle className="is-size-1">{props.children}</PageTitle>
           </div>
         </div>

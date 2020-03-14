@@ -7,7 +7,8 @@ import projectImage from "../../images/projects/Gh.png"
 
 export const frontmatter = {
   title: `Googhole`,
-  description: `The Existential Search Engine`
+  description: `The Existential Search Engine`,
+  preview: `path/to/image.jpg`,
 }
 
 export default () => (

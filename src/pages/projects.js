@@ -7,7 +7,7 @@ import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import PageTitle from "../components/pagetitle"
-import RecipeBlock from "../components/recipeblock"
+import ProjectPreview from "../components/projectpreview"
 
 import sluggify from "../helpers/sluggify"
 
@@ -18,7 +18,21 @@ export default ({ data }) => (
     <Img fixed={data.file.childImageSharp.fixed} />
     <section className="section">
       {data.allJavascriptFrontmatter.edges.map(({ node }) => (
-        <RecipeBlock title={node.frontmatter.title} slug={`projects/${sluggify(node.fileAbsolutePath)}`} />
+        /*
+        <>
+        <p>title: {node.frontmatter.title}</p>
+        <p>description: {node.frontmatter.description}</p>
+        <p>preview: {node.frontmatter.preview}</p>
+        <p>path: {node.fileAbsolutePath}</p>
+        </>
+        import previewImage from node.frontmatter.preview
+        */
+
+        <ProjectPreview title={node.frontmatter.title} slug={`projects/${sluggify(node.fileAbsolutePath)}`} imgSrc={node.frontmatter.preview}>
+          {node.frontmatter.description}
+          {node.frontmatter.preview}
+        </ProjectPreview>
+
       ))}
     </section>
   </Layout>
@@ -27,7 +41,7 @@ export default ({ data }) => (
 export const query = graphql`
 query {
   # Get an image because Gatsby image is obscenely convoluted
-  file(relativePath: {eq: "400px-Tiziano_-_Amor_Sacro_y_Amor_Profano_(Galería_Borghese,_Roma,_1514).jpg"}) {
+  file(relativePath: {eq: "renaissance/ANGELICO,_Fra_Annunciation,_1437-46_(2236990916).jpg"}) {
     childImageSharp {
       fixed {
         ...GatsbyImageSharpFixed
@@ -43,6 +57,7 @@ query {
           description
           error
           title
+          preview
         }
       }
     }

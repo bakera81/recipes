@@ -13,7 +13,7 @@ const aboutMe = [
 export default () => (
   <Layout>
     <PageTitle>About</PageTitle>
-    <P>{aboutMe.map(item => (item + " "))} [shuffle]</P>
+    <P>{aboutMe.map(item => (item + " "))} {/*[shuffle]*/}</P>
     <hr css={{width: `100px;`, marginLeft: `auto;`, marginRight: `0;`}}/>
     <P>Creative writing & computer science (bachelor's): 2011-2015.</P>
     <P>Technology, innovation, and education (master's): 2015-2016.</P>

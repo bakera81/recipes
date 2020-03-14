@@ -7,7 +7,8 @@ import projectImage from "../../images/projects/disco.png"
 
 export const frontmatter = {
   title: `Email Server and Ambient Display`,
-  description: `Internet-connected disco ball that sends email`
+  description: `Internet-connected disco ball that sends email`,
+  preview: `disco.png`,
 }
 
 export default () => (

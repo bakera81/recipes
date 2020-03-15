@@ -8,8 +8,7 @@ import projectImage from "../../images/projects/pencil-code-tree.png"
 export const frontmatter = {
   title: `Pencil Code for Educators`,
   description: `Prototyped an online resource for educators using Pencil Code.`,
-  // preview: `path/to/image.jpg`,
-  preview: projectImage,
+  preview: `projects/pencil-code-tree.png`,
 }
 
 export default () => (

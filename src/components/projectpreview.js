@@ -4,26 +4,21 @@ import { css } from "@emotion/core"
 
 import { graphql, Link } from 'gatsby'
 import Img from "gatsby-image"
-import Layout from "./layout"
-import PageTitle from "./pagetitle"
+import P from "./paragraph"
 
 
 export default props => {
-  const imgOrder = props.imgRight ? 1 : 0
-  console.log(props.imgSrc)
+  console.log(props.alignRight)
+  const containerClasses = props.alignRight == true ? `column is-half is-offset-half` : `column is-half`
   return (
     <>
-      <PageTitle>{props.title}</PageTitle>
       <section className="section">
-        <div css={{alignItems: `center;`}} className="columns">
-          <div className="column" css={{order: `${imgOrder}`}}>
+        <div className="columns">
+          <div className={containerClasses} css={{textAlign: `center;`}}>
           {/*TODO: create a border around the image using a solid color*/}
             {/*<p>{JSON.stringify(props.imgSrc)}</p> */}
             <Img fixed={props.imgSrc.childImageSharp.fixed} />
-            {/*<img css={{display: `block;`, margin: `0 auto;`}} src={props.imgSrc} /> */}
-          </div>
-          <div className="column">
-            {props.children}
+            <P>{props.description}</P>
           </div>
         </div>
       </section>

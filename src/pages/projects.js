@@ -28,22 +28,13 @@ export default ({ data }) => {
       <PageTitle>Projects</PageTitle>
       {/*TODO: use Bulma level for this*/}
       <section className="section">
-        {data.allJavascriptFrontmatter.edges.map(({ node }) => (
-          /*
-          <>
-          <p>title: {node.frontmatter.title}</p>
-          <p>description: {node.frontmatter.description}</p>
-          <p>preview: {node.frontmatter.preview}</p>
-          <p>path: {node.fileAbsolutePath}</p>
-          </>
-          import previewImage from node.frontmatter.preview
-          */
-
-          <ProjectPreview title={node.frontmatter.title} slug={`projects/${sluggify(node.fileAbsolutePath)}`} imgSrc={findPreviewImage(node.frontmatter.preview)}>
-            {node.frontmatter.description}
-            {node.frontmatter.preview}
-          </ProjectPreview>
-
+        {data.allJavascriptFrontmatter.edges.map(({ node }, i) => (
+          <ProjectPreview
+            alignRight={i % 2 == 0}
+            description={node.frontmatter.description}
+            slug={`projects/${sluggify(node.fileAbsolutePath)}`}
+            imgSrc={findPreviewImage(node.frontmatter.preview)}
+          />
         ))}
       </section>
     </Layout>

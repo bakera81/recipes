@@ -50,7 +50,7 @@ query {
     edges {
       node {
         childImageSharp {
-          fixed {
+          fixed(width: 300) {
             ...GatsbyImageSharpFixed
           }
           internal {

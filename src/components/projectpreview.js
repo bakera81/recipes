@@ -17,8 +17,8 @@ export default props => {
           <div className={containerClasses} css={{textAlign: `center;`}}>
           {/*TODO: create a border around the image using a solid color*/}
             {/*<p>{JSON.stringify(props.imgSrc)}</p> */}
-            <Img fixed={props.imgSrc.childImageSharp.fixed} />
-            <P>{props.description}</P>
+              <Img fixed={props.imgSrc.childImageSharp.fixed} />
+            <Link to={props.slug}><P>{props.description}</P></Link>
           </div>
         </div>
       </section>

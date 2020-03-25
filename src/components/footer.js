@@ -31,10 +31,11 @@ export default () => {
   )
 
   const randomImg =  data.allFile.edges[Math.floor(Math.random() * data.allFile.edges.length)]
+  const randomCrop = Math.floor(Math.random() * 100)
 
   return (
     <footer className="footer" css={{padding: `3rem 0rem 1rem;`}}>
-      <Img fluid={randomImg.node.childImageSharp.fluid} />
+      <Img fluid={randomImg.node.childImageSharp.fluid} css={{objectFit: `cover;`, objectPosition: `center ${randomCrop}%;`, height: `250px;`}} />
       <div className="level">
         <div className="level-item">
           <P><Link to="/about">about</Link></P>

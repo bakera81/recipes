@@ -1,6 +1,6 @@
 import React from "react"
 
-import 'bulma/css/bulma.css'
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import PageTitle from  "../components/pagetitle"
@@ -15,7 +15,7 @@ export default () => {
   return (
     <Layout>
       <PageTitle>About</PageTitle>
-      <P>{shuffle(aboutMe).map(item => (item + " "))} {/*[shuffle]*/}</P>
+      <P>{shuffle(aboutMe).map(item => (item + " "))} <span css={{fontSize: `.7em`}}>[<Link to="/about">shuffle</Link>]</span></P>
       <hr css={{width: `100px;`, marginLeft: `auto;`, marginRight: `0;`}}/>
       <P>Creative writing & computer science (bachelor's): 2011-2015.</P>
       <P>Technology, innovation, and education (master's): 2015-2016.</P>

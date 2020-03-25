@@ -1,7 +1,6 @@
 import React from "react"
 
 import { css } from "@emotion/core"
-import 'bulma/css/bulma.css'
 
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -30,12 +29,12 @@ export default () => {
     `
   )
 
-  const randomImg =  data.allFile.edges[Math.floor(Math.random() * data.allFile.edges.length)]
-  const randomCrop = Math.floor(Math.random() * 100)
+  const randomImg =  data.allFile.edges[Math.floor(Math.random() * data.allFile.edges.length)];
+  const randomCropPct = Math.floor(Math.random() * 11) * 10;
 
   return (
-    <footer className="footer" css={{padding: `3rem 0rem 1rem;`}}>
-      <Img fluid={randomImg.node.childImageSharp.fluid} css={{objectFit: `cover;`, objectPosition: `center ${randomCrop}%;`, height: `250px;`}} />
+    <footer className="footer" css={{backgroundColor: `white`, padding: `3rem 0rem 1rem;`}}>
+      <Img fluid={randomImg.node.childImageSharp.fluid} imgStyle={{objectFit: `cover`, objectPosition: `50% ${randomCropPct}%`, height: `250px`}} style={{height: `250px`}} />
       <div className="level">
         <div className="level-item">
           <P><Link to="/about">about</Link></P>

@@ -1,6 +1,5 @@
 import React from "react"
 
-import 'bulma/css/bulma.css'
 import { css } from "@emotion/core"
 
 import { graphql, Link } from 'gatsby'
@@ -26,17 +25,23 @@ export default ({ data }) => {
   return (
     <Layout>
       <PageTitle>Projects</PageTitle>
-      {/*TODO: use Bulma level for this*/}
+      {/*
+
+
+      */}
       <section className="section">
+      <div className="columns is-multiline is-centered" >
         {data.allJavascriptFrontmatter.edges.map(({ node }, i) => (
           <ProjectPreview
             alignRight={i % 2 == 0}
             description={node.frontmatter.description}
             slug={`projects/${sluggify(node.fileAbsolutePath)}`}
             imgSrc={findPreviewImage(node.frontmatter.preview)}
+            themeColor={node.frontmatter.themeColor}
           />
         ))}
-      </section>
+        </div>
+        </section>
     </Layout>
   )
 }
@@ -50,7 +55,7 @@ query {
     edges {
       node {
         childImageSharp {
-          fixed(width: 300) {
+          fixed(width: 300, height: 300) {
             ...GatsbyImageSharpFixed
           }
           internal {
@@ -71,6 +76,7 @@ query {
           error
           title
           preview
+          themeColor
         }
       }
     }

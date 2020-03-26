@@ -9,6 +9,7 @@ export const frontmatter = {
   title: `Email Server and Ambient Display`,
   description: `Internet-connected disco ball that sends email`,
   preview: `projects/disco.png`,
+  themeColor: `rgb(211, 198, 166)`,
 }
 
 export default () => (

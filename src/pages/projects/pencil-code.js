@@ -9,6 +9,7 @@ export const frontmatter = {
   title: `Pencil Code for Educators`,
   description: `Prototyped an online resource for educators using Pencil Code.`,
   preview: `projects/pencil-code-tree.png`,
+  themeColor: `#007F00`,
 }
 
 export default () => (

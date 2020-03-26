@@ -9,6 +9,7 @@ export const frontmatter = {
   title: `Googhole`,
   description: `The Existential Search Engine`,
   preview: `projects/Gh.png`,
+  themeColor: `#4385F4`,
 }
 
 export default () => (

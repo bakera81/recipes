@@ -10,6 +10,6 @@ const P = styled.p`
   text-align: right;
 `
 
-export default ({ children }) => (
-  <P>{children}</P>
+export default props => (
+  <P css={props.style}>{props.children}</P>
 )

@@ -30,7 +30,7 @@ export default ({ data }) => {
 
       */}
       <section className="section">
-      <div className="columns is-multiline is-centered" >
+      <div className="columns is-multiline" css={{flexWrap: `wrap`}}>
         {data.allJavascriptFrontmatter.edges.map(({ node }, i) => (
           <ProjectPreview
             alignRight={i % 2 == 0}
@@ -55,7 +55,7 @@ query {
     edges {
       node {
         childImageSharp {
-          fixed(width: 300, height: 300) {
+          fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
           }
           internal {

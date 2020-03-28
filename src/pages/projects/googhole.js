@@ -7,7 +7,7 @@ import projectImage from "../../images/projects/Gh.png"
 
 export const frontmatter = {
   title: `Googhole`,
-  description: `The Existential Search Engine`,
+  description: `The Existential Search Engine.`,
   preview: `projects/Gh.png`,
   themeColor: `#4385F4`,
 }

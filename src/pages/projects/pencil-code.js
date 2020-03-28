@@ -7,7 +7,7 @@ import projectImage from "../../images/projects/pencil-code-tree.png"
 
 export const frontmatter = {
   title: `Pencil Code for Educators`,
-  description: `Prototyped an online resource for educators using Pencil Code.`,
+  description: `Pencil Code for educators.`,
   preview: `projects/pencil-code-tree.png`,
   themeColor: `#007F00`,
 }

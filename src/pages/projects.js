@@ -29,8 +29,8 @@ export default ({ data }) => {
 
 
       */}
-      <section className="section">
-      <div className="columns is-multiline" css={{flexWrap: `wrap`}}>
+      <section className="section" css={{paddingLeft: `0`, paddingRight: `0`}}>
+      <div className="columns is-multiline">
         {data.allJavascriptFrontmatter.edges.map(({ node }, i) => (
           <ProjectPreview
             alignRight={i % 2 == 0}

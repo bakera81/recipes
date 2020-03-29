@@ -15,6 +15,7 @@ export default () => {
   return (
     <Layout>
       <PageTitle>About</PageTitle>
+      {/*TODO: only shuffle on click*/}
       <P>{shuffle(aboutMe).map(item => (item + " "))} <span css={{fontSize: `.7em`}}>[<Link to="/about">shuffle</Link>]</span></P>
       <hr css={{width: `100px;`, marginLeft: `auto;`, marginRight: `0;`}}/>
       <P>Creative writing & computer science (bachelor's): 2011-2015.</P>

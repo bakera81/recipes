@@ -67,7 +67,7 @@ query {
     }
   }
   # Get all projects
-  allJavascriptFrontmatter {
+  allJavascriptFrontmatter(sort: {order: DESC, fields: frontmatter___updatedAt}) {
     edges {
       node {
         fileAbsolutePath

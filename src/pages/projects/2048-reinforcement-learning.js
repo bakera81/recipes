@@ -20,10 +20,7 @@ export default () => (
   <Layout>
     <Project imgRight title={frontmatter.title} imgSrc={projectImage}>
       <P style={{textAlign: `left`}}>
-        TODO
-      </P>
-      <P style={{textAlign: `left`}}>
-
+        Created an "environment" for the game <a href="https://play2048.co/">2048</a> using <a href="https://gym.openai.com/">Open AI Gym</a> to train various reinforcement learning algorithms to play the game.
       </P>
     </Project>
   </Layout>

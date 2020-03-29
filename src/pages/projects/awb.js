@@ -12,6 +12,7 @@ export const frontmatter = {
   preview: `projects/awb-2020.jpg`,
   themeColor: `#828cb8`,
   updatedAt: `2020-01-01`,
+  completed: true,
 }
 
 export default () => (

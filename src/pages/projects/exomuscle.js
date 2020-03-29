@@ -15,6 +15,7 @@ export const frontmatter = {
   preview: `projects/exomuscle.png`,
   themeColor: `#212120`,
   updatedAt: `2016-01-01`,
+  completed: true,
 }
 
 export default ({ data }) => (

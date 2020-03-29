@@ -12,6 +12,7 @@ export const frontmatter = {
   preview: `projects/research-tool-3.png`,
   themeColor: `#b1cb73`, // #83dedd
   updatedAt: `2015-05-01`,
+  completed: true,
 }
 
 export default () => (

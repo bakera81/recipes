@@ -12,6 +12,7 @@ export const frontmatter = {
   preview: `projects/tangible-programming-3.png`,
   themeColor: `rgb(43, 36, 33)`,
   updatedAt: `2016-02-01`,
+  completed: true,
 }
 
 export default () => (

@@ -18,30 +18,42 @@ export default ({ data }) => {
     const node = data.allFile.edges.find(n => {
         return n.node.relativePath.includes(imagePath);
       })
-    // If this is erroring out, there is a missing frontmatter.preview!
-    return node.node
+    return node.node // If this is erroring out, there is a missing frontmatter.preview!
     }
+
+  const completedProjects = data.allJavascriptFrontmatter.edges.filter(node => node.node.frontmatter.completed)
+  const inProgressProjects = data.allJavascriptFrontmatter.edges.filter(node => !node.node.frontmatter.completed)
 
   return (
     <Layout>
       <PageTitle>Projects</PageTitle>
-      {/*
-
-
-      */}
       <section className="section" css={{paddingLeft: `0`, paddingRight: `0`}}>
-      <div className="columns is-multiline">
-        {data.allJavascriptFrontmatter.edges.map(({ node }, i) => (
-          <ProjectPreview
-            alignRight={i % 2 == 0}
-            description={node.frontmatter.description}
-            slug={`projects/${sluggify(node.fileAbsolutePath)}`}
-            imgSrc={findPreviewImage(node.frontmatter.preview)}
-            themeColor={node.frontmatter.themeColor}
-          />
-        ))}
+        <div className="columns is-multiline">
+          {completedProjects.map(({ node }, i) => (
+            <ProjectPreview
+              alignRight={i % 2 == 0}
+              description={node.frontmatter.description}
+              slug={`projects/${sluggify(node.fileAbsolutePath)}`}
+              imgSrc={findPreviewImage(node.frontmatter.preview)}
+              themeColor={node.frontmatter.themeColor}
+            />
+          ))}
         </div>
-        </section>
+      </section>
+      <PageTitle>In Progress</PageTitle>
+      <section className="section" css={{paddingLeft: `0`, paddingRight: `0`}}>
+        <div className="columns is-multiline">
+          {inProgressProjects.map(({ node }, i) => (
+            <ProjectPreview
+              alignRight={i % 2 == 0}
+              description={node.frontmatter.description}
+              slug={`projects/${sluggify(node.fileAbsolutePath)}`}
+              imgSrc={findPreviewImage(node.frontmatter.preview)}
+              themeColor={node.frontmatter.themeColor}
+            />
+          ))}
+        </div>
+      </section>
     </Layout>
   )
 }
@@ -77,6 +89,7 @@ query {
           title
           preview
           themeColor
+          completed
         }
       }
     }

@@ -12,6 +12,7 @@ export const frontmatter = {
   preview: `projects/pencil-code-tree.png`,
   themeColor: `#007F00`,
   updatedAt: `2015-10-01`,
+  completed: true,
 }
 
 export default () => (

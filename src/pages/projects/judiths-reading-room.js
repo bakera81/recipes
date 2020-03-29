@@ -12,6 +12,7 @@ export const frontmatter = {
   preview: `projects/jrr-logo.png`,
   themeColor: `#ef3741`,
   updatedAt: `2015-01-01`,
+  completed: true,
 }
 
 export default () => (

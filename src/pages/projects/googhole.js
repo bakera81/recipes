@@ -12,6 +12,7 @@ export const frontmatter = {
   preview: `projects/Gh.png`,
   themeColor: `#4385F4`,
   updatedAt: `2015-12-01`,
+  completed: true,
 }
 
 export default () => (

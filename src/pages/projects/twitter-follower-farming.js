@@ -12,7 +12,7 @@ export const frontmatter = {
   preview: `projects/djsplattermommy.png`,
   themeColor: `rgb(35, 98, 79)`,
   updatedAt: `2014-01-01`,
-  completed: false,
+  completed: true,
 }
 
 export default () => (

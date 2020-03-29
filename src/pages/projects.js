@@ -36,6 +36,7 @@ export default ({ data }) => {
               slug={`projects/${sluggify(node.fileAbsolutePath)}`}
               imgSrc={findPreviewImage(node.frontmatter.preview)}
               themeColor={node.frontmatter.themeColor}
+              backgroundColor={node.frontmatter.backgroundColor}
             />
           ))}
         </div>
@@ -89,6 +90,7 @@ query {
           title
           preview
           themeColor
+          backgroundColor
           completed
         }
       }

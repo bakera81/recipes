@@ -8,6 +8,8 @@ const P = styled.p`
   -webkit-font-smoothing : none;
   font-weight: normal;
   text-align: right;
+  padding-top: 1em;
+  padding-bottom: 1em;
 `
 
 export default props => (

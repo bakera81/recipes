@@ -4,7 +4,7 @@ import Layout from "../../components/layout"
 import Project from "../../components/project"
 import P from "../../components/paragraph"
 
-import projectImage from "../../images/projects/pencil-code-tree.png"
+import projectImage from "../../images/projects/tangible-programming-3.png"
 
 export const frontmatter = {
   title: `Tangible Programming Environment`,

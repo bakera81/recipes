@@ -11,7 +11,7 @@ import ProjectPreview from "../components/projectpreview"
 import sluggify from "../helpers/sluggify"
 
 export default ({ data }) => {
-  // This feels weird. Where should this live, given it needs `data` and `imagePath`?
+  // TODO:  This feels weird. Where should this live, given it needs `data` and `imagePath`?
   const findPreviewImage = imagePath => {
     const node = data.allFile.edges.find(n => {
         return n.node.relativePath.includes(imagePath);
@@ -24,7 +24,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <PageTitle>Projects</PageTitle>
+      <PageTitle>Data</PageTitle>
       <section className="section" css={{paddingLeft: `0`, paddingRight: `0`}}>
         <div className="columns is-multiline">
           {completedProjects.map(({ node }, i) => (
@@ -61,7 +61,7 @@ export const query = graphql`
 query {
   # Get all relevant images. Filter them down later
   allFile(filter: {
-            relativePath: {regex: "/projects/"},
+            relativePath: {regex: "/data/"},
             childImageSharp: {internal: {type: {eq: "ImageSharp"}}}}) {
     edges {
       node {
@@ -79,7 +79,7 @@ query {
   }
   # Get all projects
   allJavascriptFrontmatter(sort: {order: DESC, fields: frontmatter___updatedAt},
-                           filter: {fileAbsolutePath: {regex: "/projects/"}}) {
+                           filter: {fileAbsolutePath: {regex: "/data/"}}) {
     edges {
       node {
         fileAbsolutePath

@@ -7,8 +7,8 @@ import P from "../../components/paragraph"
 import projectImage from "../../images/projects/djsplattermommy.png"
 
 export const frontmatter = {
-  title: `Twitter Follower Farming`,
-  description: `Twitter follower farming.`,
+  title: `Farming Twitter Followers`,
+  description: `Farming Twitter followers.`,
   preview: `projects/djsplattermommy.png`,
   themeColor: `rgb(35, 98, 79)`,
   updatedAt: `2014-01-01`,

@@ -11,7 +11,7 @@ import slides from "../../images/projects/exomuscle.pdf"
 
 export const frontmatter = {
   title: `ExoMuscle`,
-  description: `Pneumatically actuated t-shirt.`,
+  description: `Pneumatically-actuated t-shirt.`,
   preview: `projects/exomuscle.png`,
   themeColor: `#212120`,
   updatedAt: `2016-01-01`,

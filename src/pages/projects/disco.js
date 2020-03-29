@@ -11,7 +11,7 @@ export const frontmatter = {
   description: `Internet-connected disco ball.`,
   preview: `projects/disco.png`,
   themeColor: `rgb(211, 198, 166)`,
-  updatedAt: `2015-09-01`,
+  updatedAt: `2015-11-01`,
   completed: true,
 }
 

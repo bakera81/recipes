@@ -12,7 +12,7 @@ export const frontmatter = {
   preview: `projects/simon.png`,
   themeColor: `#30caea`, // `#f5f403`,
   backgroundColor: `#30caea`, //`#f5f403`,
-  updatedAt: `2014-01-01`,
+  updatedAt: `2014-05-01`,
   completed: true,
 }
 

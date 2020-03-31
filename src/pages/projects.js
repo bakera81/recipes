@@ -14,8 +14,8 @@ export default ({ data }) => {
   // This feels weird. Where should this live, given it needs `data` and `imagePath`?
   const findPreviewImage = imagePath => {
     const node = data.allFile.edges.find(n => {
-        return n.node.relativePath.includes(imagePath);
-      })
+      return n.node.relativePath.includes(imagePath)
+    })
     return node.node // If this is erroring out, there is a missing frontmatter.preview!
     }
 

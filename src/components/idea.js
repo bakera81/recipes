@@ -12,13 +12,14 @@ const renderHastToReact = node => {
 
 const MdContainer = styled.div`
   p {
-    color: red;
+    backgroundColor: red;
   }
 `
 
 export default props => (
   <section className="section">
-    <h1 className="is-title-1">{props.heading}</h1>
+    <h1 className="title is-1">{props.heading}</h1>
+    <h4 className="title is-4">{props.date}</h4>
     {/* For each paragraph, render a P and it's children */}
     <MdContainer>
       {props.paragraphs.map(paragraph => (

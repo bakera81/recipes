@@ -19,6 +19,13 @@ import toString from "mdast-util-to-string"
 export default ({ data }) => {
 
   // Walk through the hast and create a data structure to pass to a custom component
+  /*
+    Markdown format:
+
+    # heading
+    ### date
+    Everthing else is content and will be rendered to HTML in a standard way.
+  */
  var simplifiedMdContent = []
  let idea = {}
  visit(data.markdownRemark.htmlAst, node => {
@@ -30,6 +37,11 @@ export default ({ data }) => {
        idea = {}
      }
      idea.heading = toString(node)
+   }
+
+   // h2 must be the date
+   if (node.tagName == "h3") {
+     idea.date = toString(node)
    }
 
    // If we encounter a paragraph, add the node and its children to an array
@@ -50,7 +62,7 @@ export default ({ data }) => {
       <PageTitle>Ideas</PageTitle>
       {/*Walk through each "idea" and send the heading and content to a subcomponent */}
       {simplifiedMdContent.map(idea => (
-        <Idea heading={idea.heading} paragraphs={idea.content} />
+        <Idea heading={idea.heading} date={idea.date} paragraphs={idea.content} />
       ))}
     </Layout>
   )

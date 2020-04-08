@@ -5,7 +5,8 @@ import { css } from "@emotion/core"
 
 import { graphql, Link } from 'gatsby'
 import Layout from "../components/layout"
-
+// Helpful hints when it's time to migate this repo:
+//https://gist.github.com/trongthanh/2779392
 const listLinkStyle = css`
   /* font-family: "Pixel Arial 11"; */
   font-family: Chomsky;

@@ -72,6 +72,45 @@ export default ({ data }) => {
   var h = require('hastscript')
   var toHast = require('mdast-util-to-hast')
 
+/* https://michal.miskernik.sk/2018-12-16-rendering-html-in-gatsby/
+      https://reactarmory.com/guides/learn-react-by-itself/custom-react-elements
+  */
+
+////////////////////////////////////////
+// These functions were used to render elements inside an `idea` component that I defined
+  const PWrapper = (name, attrs, children) => {
+    console.log(`PWrapper: ${name}`)
+    console.log(attrs)
+    console.log(children)
+    // https://reactarmory.com/guides/learn-react-by-itself/custom-react-elements
+    // if (name == `p`) {
+    //   return createFiniteElements
+    // }
+    let renderedChildren = unified()
+      .use(format)
+      .use(html)
+      .stringify(children)
+
+    return React.createElement(P, {dangerouslySetInnerHTML: { __html: renderedChildren }}, children)
+  }
+
+  const renderP = node => {
+
+  }
+
+  const renderHtmlToReact = node => {
+    console.log(`renderHtmlToReact Node:`)
+    console.log(node)
+    if (node.tagName == "p") {
+      // https://github.com/syntax-tree/hast-to-hyperscript
+      // return hastToHyperscript(PWrapper, node);
+      return React.createElement(P, {dangerouslySetInnerHTML: { __html: toString(node) }})
+    } else {
+      return hastToHyperscript(React.createElement, node);
+    }
+  };
+
+////////////////////////////////////////
 
   // var tree =  h('h1', 'Hello world!')
 //  var tree = remark()

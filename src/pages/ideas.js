@@ -60,10 +60,14 @@ export default ({ data }) => {
   return (
     <Layout>
       <PageTitle>Ideas</PageTitle>
-      {/*Walk through each "idea" and send the heading and content to a subcomponent */}
-      {simplifiedMdContent.map(idea => (
-        <Idea heading={idea.heading} date={idea.date} paragraphs={idea.content} />
-      ))}
+      <div className="columns">
+        <div className="column is-three-quarters">
+          {/*Walk through each "idea" and send the heading and content to a subcomponent */}
+          {simplifiedMdContent.map(idea => (
+            <Idea heading={idea.heading} date={idea.date} paragraphs={idea.content} />
+          ))}
+        </div>
+      </div>
     </Layout>
   )
 }

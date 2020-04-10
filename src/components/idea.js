@@ -12,14 +12,25 @@ const renderHastToReact = node => {
 
 const MdContainer = styled.div`
   p {
-    backgroundColor: red;
+    font-family: "Microsoft Sans Serif";
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    font-weight: normal;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 `
 
+const Heading = styled.h4`
+  margin-bottom: 0 !important;
+  font-family: "Microsoft Sans Serif";
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+`
+
 export default props => (
-  <section className="section">
-    <h1 className="title is-1">{props.heading}</h1>
-    <h4 className="title is-4">{props.date}</h4>
+  <section className="section" css={{padding: `3rem 8rem`}}>
+    <Heading className="title is-4">{props.heading}</Heading>
     {/* For each paragraph, render a P and it's children */}
     <MdContainer>
       {props.paragraphs.map(paragraph => (

@@ -68,7 +68,6 @@ export default ({ data }) => {
           ))}
         </div>
       </div>
-      <a id="anchors-away" href="/ideas#anchors-away">Anchors Away</a>
     </Layout>
   )
 }

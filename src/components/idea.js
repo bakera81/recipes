@@ -29,6 +29,9 @@ const Heading = styled.h4`
   font-family: "Microsoft Sans Serif";
   font-smooth: never;
   -webkit-font-smoothing: none;
+  :hover {
+    color: #3273dc;
+  }
 `
 // https://www.gatsbyjs.org/packages/gatsby-plugin-anchor-links/
 export default props => (

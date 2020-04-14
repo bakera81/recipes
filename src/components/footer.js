@@ -43,7 +43,7 @@ export default () => {
           <P><Link to="/projects">projects</Link></P>
         </div>
         <div className="level-item">
-          <P><Link to="/data">data</Link></P>
+          <P><Link to="/ideas">ideas</Link></P>
         </div>
         <div className="level-item">
           <P><Link to="/recipes">recipes</Link></P>

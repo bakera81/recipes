@@ -6,17 +6,12 @@ import styled from "@emotion/styled"
 import Layout from "../components/layout"
 import PageTitle from  "../components/pagetitle"
 import P from "../components/paragraph"
+import Hr from "../components/hr"
 import shuffle from "../helpers/shuffle"
 
 const aboutMe = [
   "Product manager.", "Growth marketer.", "Data scientist.", "Designer.", "Communicator.", "Process enthusiast.", "Aspiring Renaissance man."
 ]
-
-const Hr = styled.hr`
-  width: 100px;
-  margin-left: auto;
-  margin-right: 0;
-`
 
 class AboutMe extends React.Component {
 

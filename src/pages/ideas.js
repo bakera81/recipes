@@ -76,10 +76,6 @@ export const query = graphql`
 query {
   markdownRemark(fileAbsolutePath: {regex: "/ideas/"}) {
     id
-    frontmatter {
-      date
-      title
-    }
     headings {
       depth
       value

@@ -15,24 +15,22 @@ const listLinkStyle = css`
   font-weight: normal;
 `
 const ListLink = props => (
-  <li>
+  <div className="level-item">
     <Link to={ props.to }>
       <h1 className="title is-1" css={ listLinkStyle }>{ props.children }</h1>
     </Link>
-  </li>
+  </div>
 )
 
 export default ({ children }) => (
   <Layout>
-    <div>
-      <ul>
-        <ListLink to="/about">About</ListLink>
-        <ListLink to="/projects">Projects</ListLink>
-        <ListLink to="/ideas">Ideas</ListLink>
-        <ListLink to="/recipes">Recipes</ListLink>
-        <ListLink to="/writing">Writing</ListLink>
-        <ListLink to="/contact">Contact</ListLink>
-      </ul>
+    <div className="level" css={{minHeight: `calc(100vh - 250px - 3.25rem - 6rem)`}}>
+      <ListLink to="/about">About</ListLink>
+      <ListLink to="/projects">Projects</ListLink>
+      <ListLink to="/ideas">Ideas</ListLink>
+      <ListLink to="/recipes">Recipes</ListLink>
+      <ListLink to="/writing">Writing</ListLink>
+      <ListLink to="/contact">Contact</ListLink>
     </div>
   </Layout>
 )

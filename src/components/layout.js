@@ -10,14 +10,14 @@ import NavBar from "./navbar"
 import Footer from "./footer"
 
 
-export default ({ children }) => (
+export default props => (
   <div>
     <NavBar />
     <section className="section">
       <div className="container">
-        {children}
+        {props.children}
       </div>
     </section>
-    <Footer />
+    <Footer hideNav={props.hideNav} />
   </div>
 )

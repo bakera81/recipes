@@ -22,8 +22,8 @@ const ListLink = props => (
   </div>
 )
 
-export default ({ children }) => (
-  <Layout>
+export default () => (
+  <Layout hideNav>
     <div className="level" css={{minHeight: `calc(100vh - 250px - 3.25rem - 6rem)`}}>
       <ListLink to="/about">About</ListLink>
       <ListLink to="/projects">Projects</ListLink>

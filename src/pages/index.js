@@ -14,13 +14,25 @@ const listLinkStyle = css`
   -webkit-font-smoothing : none;
   font-weight: normal;
 `
-const ListLink = props => (
-  <div className="level-item">
-    <Link to={ props.to }>
-      <h1 className="title is-1" css={ listLinkStyle }>{ props.children }</h1>
-    </Link>
-  </div>
-)
+const ListLink = props => {
+  if (props.href) {
+    return (
+      <div className="level-item">
+        <a href={ props.href }>
+          <h1 className="title is-1" css={ listLinkStyle }>{ props.children }</h1>
+        </a>
+      </div>
+    )
+  }
+  return (
+    <div className="level-item">
+    {/* user anchors vs Gatsby links */}
+      <Link to={ props.to }>
+        <h1 className="title is-1" css={ listLinkStyle }>{ props.children }</h1>
+      </Link>
+    </div>
+  )
+}
 
 export default () => (
   <Layout hideNav>
@@ -29,7 +41,7 @@ export default () => (
       <ListLink to="/projects">Projects</ListLink>
       <ListLink to="/ideas">Ideas</ListLink>
       <ListLink to="/recipes">Recipes</ListLink>
-      <ListLink to="/writing">Writing</ListLink>
+      <ListLink href="https://medium.com/@addiebundren">Writing</ListLink>
       <ListLink to="/contact">Contact</ListLink>
     </div>
   </Layout>

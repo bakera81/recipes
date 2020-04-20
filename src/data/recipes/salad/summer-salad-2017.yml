@@ -1,14 +1,16 @@
 title: Summer Salad of the Summer (2017)
+slug: summer-salad-of-the-summer-2017
 ingredients:
-  - Spinach
-  - Cherry tomatoes
-  - Roasted, unsalted almonds
-  - Fresh little Mozzarella balls
-  - Shaved or shredded Parmesan
-  - Bacon (get pre-cooked if you don't want to cook a single damn thing)
-  - Grilled chicken breast (get it pre-grilled if you don't want to cook a single damn thing)
-  - Olive oil
-  - Balsamic vinegar
+  - text: Spinach
+    protip: 
+  - text: Cherry tomatoes
+  - text: Roasted, unsalted almonds
+  - text: Fresh little Mozzarella balls
+  - text: Shaved or shredded Parmesan
+  - text: Bacon (get pre-cooked if you don't want to cook a single damn thing)
+  - text: Grilled chicken breast (get it pre-grilled if you don't want to cook a single damn thing)
+  - text: Olive oil
+  - text: Balsamic vinegar
 instructions:
   - text: Microwave the bacon just a lil to get the texture right (if precooked). If uncooked bacon, do your thang, then cut into bite-sized pieces.
     protip: I think bacon cooks best in the oven, 425, on a baking sheet with parchment paper.

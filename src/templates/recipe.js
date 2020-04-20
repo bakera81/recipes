@@ -30,18 +30,26 @@ export default ({ data }) => (
 )
 
 export const query = graphql`
-  query($slug: String!) {
-     recipesYaml(slug: {eq: $slug}) {
-       title
-       slug
-       ingredients {
-         text
-         protip
-       }
-       instructions {
-         text
-         protip
-       }
-     }
-  }
+query($slug: String!) {
+  allSitePage(filter: {component: {regex: "/templates/recipe.js/"}}) {
+    edges {
+      node {
+        component
+        path
+        context {
+          slug
+          title
+          ingredients {
+            protip
+            text
+          }
+          instructions {
+            protip
+            text
+          }
+        }
+      }
+    }
+  }  
+}
 `

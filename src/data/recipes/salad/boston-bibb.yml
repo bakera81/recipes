@@ -1,8 +1,10 @@
 title: Boston Bibb
+slug: boston-bibb
 ingredients:
-  - Boston Bibb lettuce
-  - Lemon juice
-  - Sea salt (big crystals)
+  - text: Boston Bibb lettuce
+    protip: 
+  - text: Lemon juice
+  - text: Sea salt (big crystals)
 instructions:
   - text: Rip the lettuce into medium-sized pieces.
   - text: Douse 'em in lemon juice.

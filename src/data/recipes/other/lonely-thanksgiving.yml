@@ -6,6 +6,7 @@ ingredients:
 - text: 6 eggs
 - text: 1 bell pepper
 - text: 1 red onion
+  protip:
 instructions:
 - text: "Dice / slice the pepper and onion. If some falls on the floor, that's ok\u2014\
     you only need about 90% of each."
@@ -20,3 +21,4 @@ instructions:
 - text: Continue mashing.
 - text: When the eggs look sort of scrambled, remove from heat.
 - text: Drizzle with Sriracha and enjoy approxiamtely 2,538 calories and 104g of protein.
+  protip:

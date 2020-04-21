@@ -3,7 +3,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 // import visit from "unist-util-visit"
-// import toString from "mdast-util-to-string"
+import toString from "mdast-util-to-string"
 import renderHastToReact from "../helpers/renderHastToReact"
 
 import { graphql } from "gatsby"
@@ -23,7 +23,7 @@ const H3 = styled.h3`
 `
 
 export default ({ data }) => {
-  console.log(data.markdownRemark.htmlAst)
+  console.log(data.markdownRemark.htmlAst.children)
   // split the array of top-level children
   const isIngredients = element => element.tagName === "h1" && toString(element) === "Ingredients"
   const isInstructions = element => element.tagName === "h1" && toString(element) === "Instructions"
@@ -32,12 +32,13 @@ export default ({ data }) => {
   // order matters in the markdown:
   // 1. Ingredients
   // 2. Instructions
+  console.log(ingredientsIndex)
+  console.log(instructionsIndex)
   const ingredients = data.markdownRemark.htmlAst.children.slice(ingredientsIndex + 1, instructionsIndex)
   const instructions = data.markdownRemark.htmlAst.children.slice(instructionsIndex + 1)
 
   return (
     <Layout>
-      <p>{JSON.stringify(data)}</p>
       <PageTitle>{data.markdownRemark.frontmatter.title}</PageTitle>
       <div class="columns">
         <div class="column">
@@ -64,16 +65,3 @@ query($fileAbsolutePath: String!) {
   }
 }
 `
-// export const query = graphql`
-//   query($slug: String!) {
-//     sitePage(componentPath: {regex: "/templates/recipe.js/"},
-//               context: {slug: {eq: $slug}}) {
-//        context {
-//          slug
-//          title
-//          html
-//        }
-//        path
-//      }
-//   }
-// `

@@ -41,22 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
     `
 ).then(result => {
-    // console.log(JSON.stringify(result, null, 4))
-    // flatten and transform the result
-    // flatResults = []
-    // result.data.allFile.edges.map(node => {
-    //   // console.log(node)
-    //   flatResults.push({
-    //       node: {
-    //         relativePath: node.node.relativePath,
-    //         slug: `/recipes/${yamlSluggify(node.node.relativePath)}`,
-    //         genericYaml: node.node.childMeatYaml || node.node.childOtherYaml || node.node.childPastaYaml || node.node.childSaladYaml,
-    //       }
-    //     })
-    // })
-
     result.data.allFile.edges.forEach(({ node }) => {
-      // console.log(`${node.genericYaml.title}, ${node.slug}`)
       createPage({
         path: `/recipes/${sluggify(node.childMarkdownRemark.fileAbsolutePath)}`,
         component: path.resolve(`./src/templates/recipe.js`),
@@ -65,12 +50,8 @@ exports.createPages = ({ graphql, actions }) => {
           // in page queries as GraphQL variables.
           title: node.childMarkdownRemark.frontmatter.title,
           // category: include whether it is a meat, salad. etc
-          // TODO: Ingredients are null sometimes???
-          // If they are null for all salads, it could just be a YAML formatting issue.
-          // If not, change this file to run four separate queries with four separate createPage steps
-          // ingredients:
-          // instructions: node.genericYaml.instructions,
           slug: sluggify(node.childMarkdownRemark.fileAbsolutePath),
+          // Include fileAbsolutePath so I can use it on the page template to filter a query on markdownRemark (instead of sitePage)
           fileAbsolutePath: node.childMarkdownRemark.fileAbsolutePath,
           // TODO: I should be able to dump the AST here without having to query every potential child node of the AST
           html: node.childMarkdownRemark.html,

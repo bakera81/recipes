@@ -71,7 +71,8 @@ exports.createPages = ({ graphql, actions }) => {
           // ingredients:
           // instructions: node.genericYaml.instructions,
           slug: sluggify(node.childMarkdownRemark.fileAbsolutePath),
-          // path: `/recipes/${sluggify(node.childMarkdownRemark.fileAbsolutePath)}`,
+          fileAbsolutePath: node.childMarkdownRemark.fileAbsolutePath,
+          // TODO: I should be able to dump the AST here without having to query every potential child node of the AST
           html: node.childMarkdownRemark.html,
         },
       })

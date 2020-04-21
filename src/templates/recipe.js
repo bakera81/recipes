@@ -15,15 +15,16 @@ const H3 = styled.h3`
 
 export default ({ data }) => (
   <Layout>
-    <PageTitle title={data.recipesYaml.title.toUpperCase()} />
+    <p>{JSON.stringify(data)}</p>
+    <PageTitle title={data.sitePage.context.title.toUpperCase()} />
     <div class="columns">
       <div class="column">
         <H3 className="title is-3">Ingredients</H3>
-        <RecipeList list={data.recipesYaml.ingredients} />
+        {/*<RecipeList list={data.recipesYaml.ingredients} /> */}
       </div>
       <div class="column">
         <H3 className="title is-3">Instructions</H3>
-        <RecipeList list={data.recipesYaml.instructions} />
+        {/*   <RecipeList list={data.recipesYaml.instructions} />*/}
       </div>
     </div>
   </Layout>
@@ -31,25 +32,14 @@ export default ({ data }) => (
 
 export const query = graphql`
 query($slug: String!) {
-  allSitePage(filter: {component: {regex: "/templates/recipe.js/"}}) {
-    edges {
-      node {
-        component
-        path
-        context {
-          slug
-          title
-          ingredients {
-            protip
-            text
-          }
-          instructions {
-            protip
-            text
-          }
-        }
-      }
-    }
-  }  
+  sitePage(componentPath: {regex: "/templates/recipe.js/"},
+            context: {slug: {eq: $slug}}) {
+     context {
+       slug
+       title
+       html
+     }
+     path
+   }
 }
 `

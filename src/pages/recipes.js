@@ -21,8 +21,8 @@ const RecipeList = props => (
   <ul>
   {props.recipeData.map(({ node }) => (
     <li>
-      <Link to={node.slug}>
-        <P style={{textAlign: `left`}}>{node.title}</P>
+      <Link to={node.path}>
+        <P style={{textAlign: `left`}}>{node.context.title}</P>
       </Link>
     </li>
   ))}
@@ -38,11 +38,11 @@ export default ({ data }) => {
         <div className="columns">
           <div className="column is-6">
             <RecipeSection>Pasta</RecipeSection>
-            <RecipeList recipeData={data.allRecipesYaml.edges} />
+            <RecipeList recipeData={data.allSitePage.edges} />
           </div>
           <div className="column is-6">
             <RecipeSection>Meat</RecipeSection>
-            <RecipeList recipeData={data.allRecipesYaml.edges} />
+            <RecipeList recipeData={data.allSitePage.edges} />
           </div>
         </div>
       </div>
@@ -50,18 +50,18 @@ export default ({ data }) => {
         <div className="columns">
           <div className="column is-6">
             <RecipeSection>Salad</RecipeSection>
-            <RecipeList recipeData={data.allRecipesYaml.edges} />
+            <RecipeList recipeData={data.allSitePage.edges} />
           </div>
           <div className="column is-6">
             <RecipeSection>Other</RecipeSection>
-            <RecipeList recipeData={data.allRecipesYaml.edges} />
+            <RecipeList recipeData={data.allSitePage.edges} />
           </div>
         </div>
       </div>
       <div className="section">
         <div className="columns is-multiline">
-        {data.allRecipesYaml.edges.map(({ node }) => (
-          <RecipePreview title={node.title} slug={node.slug} />
+        {data.allSitePage.edges.map(({ node }) => (
+          <RecipePreview title={node.context.title} slug={node.context.slug} />
         ))}
         </div>
       </div>
@@ -71,55 +71,16 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMeatYaml {
+    allSitePage(filter: {componentPath: {regex: "/templates/recipe.js/"}}) {
       edges {
         node {
-          title
-          ingredients {
-            text
+          context {
+            title
+            slug
+            html
           }
-          instructions {
-            text
-          }
-        }
-      }
-    }
-    allOtherYaml {
-      edges {
-        node {
-          title
-          ingredients {
-            text
-          }
-          instructions {
-            text
-          }
-        }
-      }
-    }
-    allSaladYaml {
-      edges {
-        node {
-          title
-          ingredients {
-            text
-          }
-          instructions {
-            text
-          }
-        }
-      }
-    }
-    allPastaYaml {
-      edges {
-        node {
-          title
-          ingredients {
-            text
-          }
-          instructions {
-            text
-          }
+          path
+          componentPath
         }
       }
     }

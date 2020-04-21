@@ -1,8 +1,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const yamlSluggify =  fullPath => {
-  return fullPath.replace(/^.*[\\\/]/, '').replace('\.yml', '')
+const sluggify =  fullPath => {
+  return fullPath.replace(/^.*[\\\/]/, '').replace('\.md', '')
 }
 
 // This isn't working anymore
@@ -25,63 +25,15 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allFile(filter: {
-        relativePath: {
-          regex: "/recipes/",
-          nin: [
-            "recipes/meat/TEMPLATE-DONOTREMOVE.yml",
-            "recipes/other/TEMPLATE-DONOTREMOVE.yml",
-            "recipes/pasta/TEMPLATE-DONOTREMOVE.yml",
-            "recipes/salad/TEMPLATE-DONOTREMOVE.yml",
-          ]
-        },
-        extension: {eq: "yml"}}) {
+      allFile(filter: {relativePath: {regex: "/recipes/"}, ext: {eq: ".md"}}) {
         edges {
           node {
-            relativePath
-            childMeatYaml {
-              title
-              ingredients {
-                protip
-                text
+            childMarkdownRemark {
+              fileAbsolutePath
+              frontmatter {
+                title
               }
-              instructions {
-                protip
-                text
-              }
-            }
-            childOtherYaml {
-              title
-              ingredients {
-                protip
-                text
-              }
-              instructions {
-                protip
-                text
-              }
-            }
-            childPastaYaml {
-              title
-              ingredients {
-                protip
-                text
-              }
-              instructions {
-                protip
-                text
-              }
-            }
-            childSaladYaml {
-              title
-              instructions {
-                protip
-                text
-              }
-              ingedients {
-                protip
-                text
-              }
+              html
             }
           }
         }
@@ -91,35 +43,36 @@ exports.createPages = ({ graphql, actions }) => {
 ).then(result => {
     // console.log(JSON.stringify(result, null, 4))
     // flatten and transform the result
-    flatResults = []
-    result.data.allFile.edges.map(node => {
-      // console.log(node)
-      flatResults.push({
-          node: {
-            relativePath: node.node.relativePath,
-            slug: `/recipes/${yamlSluggify(node.node.relativePath)}`,
-            genericYaml: node.node.childMeatYaml || node.node.childOtherYaml || node.node.childPastaYaml || node.node.childSaladYaml,
-          }
-        })
-    })
+    // flatResults = []
+    // result.data.allFile.edges.map(node => {
+    //   // console.log(node)
+    //   flatResults.push({
+    //       node: {
+    //         relativePath: node.node.relativePath,
+    //         slug: `/recipes/${yamlSluggify(node.node.relativePath)}`,
+    //         genericYaml: node.node.childMeatYaml || node.node.childOtherYaml || node.node.childPastaYaml || node.node.childSaladYaml,
+    //       }
+    //     })
+    // })
 
-    flatResults.forEach(({ node }) => {
+    result.data.allFile.edges.forEach(({ node }) => {
       // console.log(`${node.genericYaml.title}, ${node.slug}`)
-      console.log(node.genericYaml.ingredients)
       createPage({
-        path: node.slug,
+        path: `/recipes/${sluggify(node.childMarkdownRemark.fileAbsolutePath)}`,
         component: path.resolve(`./src/templates/recipe.js`),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
-          title: node.genericYaml.title,
+          title: node.childMarkdownRemark.frontmatter.title,
           // category: include whether it is a meat, salad. etc
           // TODO: Ingredients are null sometimes???
           // If they are null for all salads, it could just be a YAML formatting issue.
           // If not, change this file to run four separate queries with four separate createPage steps
-          ingredients: node.genericYaml.ingredients, // if this errors out, ensure every entry has an `ingredients` key!
-          instructions: node.genericYaml.instructions,
-          slug: node.slug,
+          // ingredients:
+          // instructions: node.genericYaml.instructions,
+          slug: sluggify(node.childMarkdownRemark.fileAbsolutePath),
+          // path: `/recipes/${sluggify(node.childMarkdownRemark.fileAbsolutePath)}`,
+          html: node.childMarkdownRemark.html,
         },
       })
     })

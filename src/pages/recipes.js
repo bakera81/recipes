@@ -58,13 +58,6 @@ export default ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="section">
-        <div className="columns is-multiline">
-        {data.allSitePage.edges.map(({ node }) => (
-          <RecipePreview title={node.context.title} slug={node.context.slug} />
-        ))}
-        </div>
-      </div>
     </Layout>
   )
 }

@@ -16,4 +16,4 @@ title: Easy honey-sriracha pork chops
 5. Smother the chops using half of your sauce. Save the other half for dipping.
 6. Bake 25-30 minutes.
 7. Enjoy.
-  + Pro Tip\u2122: Serve with a spinach salad and toasted ciabatta."
+  + Pro Tip™️: Serve with a spinach salad and toasted ciabatta.

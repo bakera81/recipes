@@ -8,7 +8,7 @@ title: Happy sausage surprise for one
 * 2 tallboys of "sausage beer", i.e. 'Gansett, PBR, High Life, etc.
 * 1 green bell pepper
 * 1 large Spanish onion
-* Pro Tip\u2122: If you cannot find 1 large Spanish onion:
+* Pro Tip™️: If you cannot find 1 large Spanish onion:
 * 2 smaller Spanish onions
 
 # Instructions
@@ -22,8 +22,8 @@ title: Happy sausage surprise for one
  7. Whenever the pan looks like it is starting to lose moisture, gently waterfall
     some beer onto your sausage friends.
  8. Occasionally, roll the sausages around.
- 9. Pro Tip\u2122: Sometimes, I make a little dam out of the pepper / onions to contain the beer around the sausages. It is like a little hot tub for them!
+ 9. Pro Tip™️: Sometimes, I make a little dam out of the pepper / onions to contain the beer around the sausages. It is like a little hot tub for them!
  10. Continue this process for 20-30 minutes, until the sausages are thoroughly cooked.
- 11. Pro Tip\u2122: Depending on the rate that you are drinking the beer, you may need multiple cans.
+ 11. Pro Tip™️: Depending on the rate that you are drinking the beer, you may need multiple cans.
  12. Stuff the sausage, peppers, and onions into a toasted, sliced ciabatta roll
     and garnish with Frank's Red Hot.

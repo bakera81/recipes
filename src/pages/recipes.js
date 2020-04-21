@@ -38,11 +38,11 @@ export default ({ data }) => {
         <div className="columns">
           <div className="column is-6">
             <RecipeSection>Pasta</RecipeSection>
-            <RecipeList recipeData={data.allSitePage.edges} />
+            <RecipeList recipeData={data.allSitePage.edges.filter(node => node.node.context.fileAbsolutePath.includes(`pasta`))} />
           </div>
           <div className="column is-6">
             <RecipeSection>Meat</RecipeSection>
-            <RecipeList recipeData={data.allSitePage.edges} />
+            <RecipeList recipeData={data.allSitePage.edges.filter(node => node.node.context.fileAbsolutePath.includes(`meat`))} />
           </div>
         </div>
       </div>
@@ -50,11 +50,11 @@ export default ({ data }) => {
         <div className="columns">
           <div className="column is-6">
             <RecipeSection>Salad</RecipeSection>
-            <RecipeList recipeData={data.allSitePage.edges} />
+            <RecipeList recipeData={data.allSitePage.edges.filter(node => node.node.context.fileAbsolutePath.includes(`salad`))} />
           </div>
           <div className="column is-6">
             <RecipeSection>Other</RecipeSection>
-            <RecipeList recipeData={data.allSitePage.edges} />
+            <RecipeList recipeData={data.allSitePage.edges.filter(node => node.node.context.fileAbsolutePath.includes(`other`))} />
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@ export const query = graphql`
           context {
             title
             slug
-            html
+            fileAbsolutePath
           }
           path
           componentPath

@@ -16,7 +16,7 @@
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
     "bulma": "^0.7.5",
-    "gatsby": "^2.7.1",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-emotion": "^4.0.7",
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-source-filesystem": "^2.0.37",
